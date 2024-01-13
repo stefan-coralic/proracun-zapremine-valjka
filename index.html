@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <title>Proračun zapremine valjka</title>
+  <link rel="shortcut icon" href="pictures/cylinder.ico" type="image/x-icon">
+</head>
+<body>
+
+  <style>
+
+    * {
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+
+    body {
+      background-color: #1D2B53;
+      color: #FAEF5D;
+      font-weight: 700;
+    }
+    
+
+    .container {
+      width: 300px;
+      margin: 90px auto;
+      background-color: #7E2553;
+      padding: 10px;
+      box-shadow: 0 0 20px rgb(34, 34, 34);
+     
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+  
+    #poluprecnik {
+      margin-top: 16px;
+      width: 200px;
+      padding: 10px;
+      margin-bottom: 16px;
+      
+    }
+
+    #visina {
+      margin-top: 16px;
+      width: 200px;
+      padding: 10px;
+      
+    }
+
+    input[type = submit] {
+      width: 100px;
+      padding: 8px;
+      background-color: #FAEF5D;
+      color: #FF004D;
+      border: none;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+
+  </style>
+
+
+
+  <div class="container">
+
+    <form action="#" method="post" class="form" onsubmit="izracunajZapreminu(); return false;">
+      <label for="poluprecnik">Poluprečnik valjka:</label>
+      <input type="number" name="poluprecnik" id="poluprecnik" required>
+
+      <label for="visina">Visina valjka:</label>
+      <input type="number" name="visina" id="visina" required>
+
+      <p id="rezultat"></p>
+
+      <input type="submit" value="Izračunaj">
+
+    </form>
+  </div>
+
+  <script>
+
+    function izracunajZapreminu() {
+
+      var poluprecnik = document.getElementById("poluprecnik").value;
+      var visina = document.getElementById("visina").value;
+
+      var zapremina = Math.PI * Math.pow(poluprecnik, 2) * visina;
+
+      document.getElementById("rezultat").innerHTML = " Zapremina valjka: " + zapremina.toFixed(0)+ " m2 ";
+      
+
+    }
+
+  </script>
+
+</body>
+</html>
